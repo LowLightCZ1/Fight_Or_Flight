@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bmwdujlsyn57k"]
+
+[ext_resource type="Script" uid="uid://dar15ha5f3sl5" path="res://Dialogue.gd" id="1_6gwre"]
+[ext_resource type="Texture2D" uid="uid://d1ia4pm1yxs5b" path="res://Textures/dialogue_backgroung.png" id="1_q3hsk"]
+[ext_resource type="AudioStream" uid="uid://cgsh4i2h5atou" path="res://Sounds/floraphonic-bloop-2-186531.mp3" id="3_qso43"]
+
+[node name="Dialogue" type="Control" unique_id=1091645097]
+layout_mode = 3
+anchor_right = 0.779
+anchor_bottom = 0.248
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6gwre")
+
+[node name="Backround" type="NinePatchRect" parent="." unique_id=1249726594]
+texture_filter = 1
+layout_mode = 0
+offset_right = 798.0
+offset_bottom = 149.0
+texture = ExtResource("1_q3hsk")
+region_rect = Rect2(4.5608826, 4.8489, 2.877739, 2.5899658)
+
+[node name="Content" type="RichTextLabel" parent="." unique_id=2087627273]
+layout_mode = 0
+offset_left = 12.5
+offset_top = 10.5
+offset_right = 785.5
+offset_bottom = 138.5
+theme_override_colors/default_color = Color(0.4981839, 0.32672867, 0.10632994, 1)
+bbcode_enabled = true
+
+[node name="TypeTyper" type="Timer" parent="." unique_id=26256148]
+wait_time = 0.04
+
+[node name="PauseTimer" type="Timer" parent="." unique_id=805146281]
+one_shot = true
+
+[node name="DialogueStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1553676369]
+stream = ExtResource("3_qso43")
+
+[connection signal="timeout" from="TypeTyper" to="." method="_on_type_typer_timeout"]
+[connection signal="finished" from="DialogueStreamPlayer" to="." method="_on_dialogue_stream_player_finished"]
