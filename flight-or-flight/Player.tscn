@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37ftj"]
-size = Vector2(20, 60)
+size = Vector2(33, 60)
 
 [node name="Player" type="Area2D" unique_id=85531650]
 script = ExtResource("1_kpjcp")
@@ -29,5 +29,5 @@ sprite_frames = SubResource("SpriteFrames_37ftj")
 animation = &"Testing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1741746485]
-position = Vector2(-1, 2)
+position = Vector2(5.5, 2)
 shape = SubResource("RectangleShape2D_37ftj")
