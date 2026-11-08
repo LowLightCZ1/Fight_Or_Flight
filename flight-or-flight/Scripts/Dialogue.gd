@@ -9,15 +9,20 @@ extends Control
 @onready var voice_player := get_node("DialogueStreamPlayer") as AudioStreamPlayer
 var _playing_voice := false
 
+@onready var _calc := get_node("PauseCalculator") as PauseCalculator
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().create_timer(1.0).timeout
-	update_message("Hello World. This is my first text in this demo.")
+	update_message("Hello World.This is my first text in this demo.")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func update_message(message: String) -> void:
-	content.text = message
+	content.text = _calc.extract_pause_from_string(
+		message
+	)
 	content.visible_characters = 0
 	type_timer.start()
 	_playing_voice = true
