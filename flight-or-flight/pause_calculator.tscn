@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d3acwq5rjuvtf"]
+
+[ext_resource type="Script" uid="uid://odto2f3sqg6j" path="res://Scripts/pause_calculator.gd" id="1_obuvo"]
+
+[node name="PauseCalculator" type="Node" unique_id=20346146]
+script = ExtResource("1_obuvo")
