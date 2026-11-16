@@ -15,7 +15,7 @@ var _playing_voice := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().create_timer(1.0).timeout
-	update_message("Hello World.This is my first text in this demo.")
+	update_message("Hello World.{p=0.5} This is my first...{p=0.8} text in this demo.")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,7 +30,7 @@ func update_message(message: String) -> void:
 	
 
 func _on_type_typer_timeout() -> void:
-	#print(content.visible_characters, " / ", content.get_total_character_count())
+	_calc.check_at_pos(content.visible_characters)
 	if content.visible_characters < content.text.length():
 		content.visible_characters += 1
 	else:
@@ -38,7 +38,16 @@ func _on_type_typer_timeout() -> void:
 		_playing_voice = false
 		voice_player.stop()
 
-
+func _on_pause_calculator_pause_requested(duration: float) -> void:
+	_playing_voice = false
+	type_timer.stop()
+	pause_timer.wait_time = duration
+	pause_timer.start()
+	
+func _on_pause_timer_timeout() -> void:
+	_playing_voice = true
+	voice_player.play(0)
+	type_timer.start()
 
 func _on_dialogue_stream_player_finished() -> void:
 		if _playing_voice:

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cxfkpasptul1"]
 
 [ext_resource type="AudioStream" uid="uid://cgsh4i2h5atou" path="res://Sounds/floraphonic-bloop-2-186531.mp3" id="1_yirwv"]
-[ext_resource type="Script" uid="uid://bs7fqotmftyq5" path="res://Scripts/dialogue_stream_player.gd" id="2_0vywg"]
+[ext_resource type="Script" uid="uid://bs7fqotmftyq5" path="res://Scripts/DialogueStreamPlayer.gd" id="2_0vywg"]
 
 [node name="DialogueStreamPlayer" type="AudioStreamPlayer" unique_id=1195689665]
 stream = ExtResource("1_yirwv")
