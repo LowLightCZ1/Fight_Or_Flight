@@ -1,6 +1,6 @@
 extends Button
 
-# Původní cílové měřítko pro hover (můžeš si upravit, např. 1.2)
+# Původní a zvětšené měřítko pro hover efekt
 var hover_scale: Vector2 = Vector2(1.15, 1.15)
 var normal_scale: Vector2 = Vector2(1.0, 1.0)
 
@@ -22,7 +22,21 @@ func _on_mouse_exited() -> void:
 
 func _on_pressed() -> void:
 	pivot_offset = size / 2
-	# Efekt stisknutí: Rychle se zmenší (zmáčkne se) a hned zase skočí zpět na hover/normal velikost
+	# Efekt stisknutí (squish)
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(0.9, 0.9), 0.05)
 	tween.tween_property(self, "scale", hover_scale, 0.08)
+	
+	# Akce podle názvu tlačítka ve stromu scény (využíváme SceneManager pro historii)
+	match name:
+		"PLAY":
+			SceneManager.change_scene("res://Scenes/Char_choice.tscn")
+				
+		"SETTINGS":
+			SceneManager.change_scene("res://Scenes/Settings.tscn")
+				
+		"BACK":
+			SceneManager.go_back()
+				
+		"QUIT":
+			get_tree().quit()
