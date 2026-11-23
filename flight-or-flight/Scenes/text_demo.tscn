@@ -42,4 +42,3 @@ one_shot = true
 
 [connection signal="timeout" from="TypeTyper" to="." method="_on_type_typer_timeout"]
 [connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]
-[connection signal="pause_requested" from="PauseCalculator" to="." method="_on_pause_calculator_pause_requested"]
