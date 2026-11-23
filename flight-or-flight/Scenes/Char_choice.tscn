@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://4fpoq6y8c3e4"]
+
+[ext_resource type="Script" uid="uid://drf85lewlssmb" path="res://Scripts/scale.gd" id="1_vsvfj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2yng"]
+bg_color = Color(0.10980392, 0.14117648, 0.1764706, 1)
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ps0"]
+bg_color = Color(0.17254902, 0.21568628, 0.26666668, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siod4"]
+bg_color = Color(0.17405051, 0.21707329, 0.2654863, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b07fi"]
+bg_color = Color(0.17254902, 0.21568628, 0.26666668, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6lt7"]
+bg_color = Color(0.17254902, 0.21568628, 0.26666668, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 15
+
+[node name="Control" type="Control" unique_id=1613670680]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1776858861]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginConteiner" type="MarginContainer" parent="." unique_id=1787669720]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_left = 50.0
+offset_top = 577.0
+offset_right = -932.0
+offset_bottom = -31.70404
+
+[node name="RotatedMenu" type="Node2D" parent="MarginConteiner" unique_id=2092901280]
+skew = 0.61784655
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginConteiner/RotatedMenu" unique_id=90424034]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 15
+
+[node name="BACK" type="Button" parent="MarginConteiner/RotatedMenu/VBoxContainer" unique_id=55898006]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93333334, 0.8235294, 0.7137255, 1)
+theme_override_colors/font_pressed_color = Color(0.93333334, 0.85490197, 0.7647059, 1)
+theme_override_colors/font_hover_color = Color(0.93333334, 0.8235294, 0.7137255, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.93333334, 0.8235294, 0.7137255, 1)
+theme_override_colors/font_outline_color = Color(0.3529412, 0.21960784, 0.18039216, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_o2yng")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x2ps0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_siod4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_b07fi")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_x6lt7")
+text = "BACK
+"
+script = ExtResource("1_vsvfj")

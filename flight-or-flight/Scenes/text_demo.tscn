@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dar15ha5f3sl5" path="res://Scripts/Dialogue.gd" id="1_6gwre"]
 [ext_resource type="Texture2D" uid="uid://d1ia4pm1yxs5b" path="res://Textures/dialogue_backgroung.png" id="1_q3hsk"]
-[ext_resource type="PackedScene" uid="uid://cxfkpasptul1" path="res://dialogue_stream_player.tscn" id="3_du11j"]
-[ext_resource type="PackedScene" uid="uid://d3acwq5rjuvtf" path="res://pause_calculator.tscn" id="4_pho6k"]
+[ext_resource type="PackedScene" uid="uid://cxfkpasptul1" path="res://Scenes/dialogue_stream_player.tscn" id="3_du11j"]
+[ext_resource type="PackedScene" uid="uid://d3acwq5rjuvtf" path="res://Scenes/pause_calculator.tscn" id="4_pho6k"]
 
 [node name="Dialogue" type="Control" unique_id=1091645097]
 layout_mode = 3
@@ -42,4 +42,3 @@ one_shot = true
 
 [connection signal="timeout" from="TypeTyper" to="." method="_on_type_typer_timeout"]
 [connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]
-[connection signal="pause_requested" from="PauseCalculator" to="." method="_on_pause_calculator_pause_requested"]

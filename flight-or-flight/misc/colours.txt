@@ -1,0 +1,5 @@
+tmavě modrá bgr: 1c242d
+tmavě modrá bgr hover: 2c3744
+hnědá border: 5a382e
+tělová font: eed2b6
+tělová pressed font: eedac3
