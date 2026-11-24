@@ -13,9 +13,9 @@ var _playing_voice := false
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	await get_tree().create_timer(1.0).timeout
-	update_message("Hello World.{p=0.5} This is my first...{p=0.8} text in this demo.")
+#func _ready() -> void:
+	#await get_tree().create_timer(1.0).timeout
+	#update_message("Hello World.{p=0.5} This is my first...{p=0.8} text in this demo.")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
