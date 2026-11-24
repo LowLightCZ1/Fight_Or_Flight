@@ -15,12 +15,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37ftj"]
-size = Vector2(33, 60)
+size = Vector2(43, 60)
 
 [node name="Player" type="Area2D" unique_id=85531650]
+position = Vector2(74, 420)
 script = ExtResource("1_kpjcp")
 speed = 200
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1179438973]
 texture_filter = 1
@@ -29,5 +29,7 @@ sprite_frames = SubResource("SpriteFrames_37ftj")
 animation = &"Testing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1741746485]
-position = Vector2(5.5, 2)
+position = Vector2(10.5, 2)
 shape = SubResource("RectangleShape2D_37ftj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

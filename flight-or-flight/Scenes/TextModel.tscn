@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dsmm7pxv466x2"]
+
+[ext_resource type="Texture2D" uid="uid://dwlsjlaqkq63n" path="res://Characters/Prototype_Person.png" id="1_n7lgc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4fw2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n7lgc")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4fw2"]
+size = Vector2(46, 62)
+
+[node name="TextModel" type="Area2D" unique_id=867740894]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=460266307]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_v4fw2")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2143931075]
+position = Vector2(-9, 1)
+shape = SubResource("RectangleShape2D_v4fw2")
+
+[node name="Label" type="Label" parent="." unique_id=1341671283]
+offset_left = -79.23
+offset_top = 41.62
+offset_right = 60.769997
+offset_bottom = 64.62002
+text = "Press E to interact"
