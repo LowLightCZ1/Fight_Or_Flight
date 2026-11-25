@@ -17,7 +17,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37ftj"]
 size = Vector2(43, 60)
 
-[node name="Player" type="Area2D" unique_id=85531650]
+[node name="Player" type="Area2D" unique_id=85531650 groups=["player"]]
 position = Vector2(74, 420)
 script = ExtResource("1_kpjcp")
 speed = 200

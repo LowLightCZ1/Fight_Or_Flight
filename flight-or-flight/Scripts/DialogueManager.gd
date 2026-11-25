@@ -1,7 +1,7 @@
 extends Node
 class_name DialogueManager
 
-var DIALOGUE_SCEEN := preload("res://text_demo.tscn")
+var DIALOGUE_SCEEN := preload("res://Scenes/text_demo.tscn")
 
 
 signal message_requested()
@@ -18,7 +18,7 @@ func _input(event: InputEvent) -> void:
 	if(
 		event.is_pressed() and 
 		!event.is_echo() and
-		event is InputEventKey and event.keycode == KEY_ENTER and 
+		event is InputEventKey and event.keycode == KEY_ENTER or KEY_SPACE and 
 		_is_active and cur_dialogue_instance.message_is_fully_visible()
 	):
 		if _active_dialogue_offset < _messages.size() - 1:
@@ -61,8 +61,8 @@ func _fade_dialogue(target_aplha: float, duration: float = 0.3) -> void:
 	if opacity_tween and opacity_tween.is_valid():
 		opacity_tween.kill()
 		
-	opacity_tween.create_tween()
+	opacity_tween = create_tween()
 	opacity_tween.tween_property(cur_dialogue_instance, "modulate:a", target_aplha, duration)
 
 func _on_message_completed() -> void:
-	emit_signal("message_completed")
+	message_completed.emit()

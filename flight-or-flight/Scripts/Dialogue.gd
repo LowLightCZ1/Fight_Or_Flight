@@ -1,6 +1,7 @@
 class_name Dialogue
 extends Control
 
+signal message_completed
 
 @onready var content := get_node("Content") as RichTextLabel
 @onready var type_timer := get_node("TypeTyper") as Timer
@@ -11,6 +12,9 @@ var _playing_voice := false
 
 @onready var _calc := get_node("PauseCalculator") as PauseCalculator
 
+func message_is_fully_visible() -> bool:
+	return content.visible_characters >= content.get_total_character_count() \
+		and pause_timer.is_stopped()
 
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
@@ -31,12 +35,13 @@ func update_message(message: String) -> void:
 
 func _on_type_typer_timeout() -> void:
 	_calc.check_at_pos(content.visible_characters)
-	if content.visible_characters < content.text.length():
+	if content.visible_characters < content.get_total_character_count():
 		content.visible_characters += 1
 	else:
 		type_timer.stop()
 		_playing_voice = false
 		voice_player.stop()
+		message_completed.emit()
 
 func _on_pause_calculator_pause_requested(duration: float) -> void:
 	_playing_voice = false
